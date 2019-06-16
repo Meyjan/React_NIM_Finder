@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-const Title = ({ target }) => {
+const Help = () => {
   return (
     <React.Fragment>
-      <h1>Title Component</h1>
+      <h1>Help Component</h1>
     </React.Fragment>
   );
 };
 
-export default Title;
+export default Help;
