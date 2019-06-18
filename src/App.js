@@ -37,6 +37,18 @@ class App extends Component {
     this.setState({ showScreen: "help" });
   };
 
+  handleLoggedIn = token => {
+    this.setState({ showScreen: "search" });
+    this.setState({ loggedIn: true });
+    this.setState({ authToken: token });
+  };
+
+  handleLoggedOut = () => {
+    this.setState({ showScreen: "title" });
+    this.setState({ loggedIn: false });
+    this.setState({ authToken: undefined });
+  };
+
   render() {
     // Di atas Fragment buatlah NavBar dahulu untuk pindah laman
     return (
@@ -46,12 +58,18 @@ class App extends Component {
           gotoHelp={this.handlegotoHelp}
           gotoSearch={this.handlegotoSearch}
           gotoLogin={this.handlegotoLogin}
+          gotoLogout={this.handleLoggedOut}
           gotoRegister={this.handlegotoRegister}
+          loggedIn={this.state.loggedIn}
         />
         {this.state.showScreen === "title" && <Title />}
         {this.state.showScreen === "register" && <Register />}
-        {this.state.showScreen === "login" && <Login />}
-        {this.state.showScreen === "search" && <Search />}
+        {this.state.showScreen === "login" && (
+          <Login onLoggedIn={this.handleLoggedIn} />
+        )}
+        {this.state.showScreen === "search" && (
+          <Search authToken={this.state.authToken} />
+        )}
         {this.state.showScreen === "help" && <Help />}
       </React.Fragment>
     );
