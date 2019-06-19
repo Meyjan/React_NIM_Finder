@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 
 const SearchForm = props => (
-  <form onSubmit={props.onRequest}>
-    <input type="text" name="findNIM" placeholder="Insert NIM or Name" />
+  <form onSubmit={props.onSearch}>
+    <input type="text" name="finder" placeholder="Insert NIM or Name" />
+    <button>Click to Search</button>
   </form>
 );
 
