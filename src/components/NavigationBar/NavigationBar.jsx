@@ -2,10 +2,12 @@ import React from "react";
 
 const NavigationBar = props => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" onClick={() => props.gotoTitle()}>
-        NIM Finder - React
-      </a>
+    <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <button className="btn btn-default" onClick={() => props.gotoTitle()}>
+        <h4>
+          <font color="white">React NIM Finder</font>
+        </h4>
+      </button>
       <button
         className="navbar-toggler"
         type="button"
@@ -21,39 +23,54 @@ const NavigationBar = props => {
       <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
           <li className="nav-item">
-            <a className="nav-link" onClick={() => props.gotoHelp()}>
-              Help
-            </a>
+            <button
+              className="btn btn-default"
+              onClick={() => props.gotoHelp()}
+            >
+              <font color="white">Help</font>
+            </button>
           </li>
           <li className="nav-item">
-            <a
-              className={props.loggedIn ? "nav-link" : "nav-link disabled"}
+            <button
+              className={
+                props.loggedIn ? "btn btn-default" : "btn btn-default disabled"
+              }
+              disabled={props.loggedIn ? false : true}
               onClick={() => props.gotoSearch()}
               tabIndex="-1"
               aria-disabled="true"
             >
-              Search!
-            </a>
+              <font color="white">Search!</font>
+            </button>
           </li>
         </ul>
         <ul className="nav navbar-nav navbar-right mt-2 mt-lg-0">
           <li className="nav-item">
-            <a className="nav-link" onClick={() => props.gotoRegister()}>
-              Register
-            </a>
+            <button
+              className="btn btn-default"
+              onClick={() => props.gotoRegister()}
+            >
+              <font color="white">Register</font>
+            </button>
           </li>
           {!props.loggedIn && (
             <li className="nav-item">
-              <a className="nav-link" onClick={() => props.gotoLogin()}>
-                Login
-              </a>
+              <button
+                className="btn btn-default"
+                onClick={() => props.gotoLogin()}
+              >
+                <font color="white">Login</font>
+              </button>
             </li>
           )}
           {props.loggedIn && (
             <li className="nav-item">
-              <a className="nav-link" onClick={() => props.gotoLogout()}>
-                Logout
-              </a>
+              <button
+                className="btn btn-default"
+                onClick={() => props.gotoLogout()}
+              >
+                <font color="white">Logout</font>
+              </button>
             </li>
           )}
         </ul>

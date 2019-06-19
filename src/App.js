@@ -9,6 +9,7 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import Search from "./components/Search/Search";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
+import NavigationBar_Bottom from "./components/NavigationBar_Bottom/NavigationBar_Bottom";
 
 class App extends Component {
   state = {
@@ -62,15 +63,18 @@ class App extends Component {
           gotoRegister={this.handlegotoRegister}
           loggedIn={this.state.loggedIn}
         />
-        {this.state.showScreen === "title" && <Title />}
-        {this.state.showScreen === "register" && <Register />}
-        {this.state.showScreen === "login" && (
-          <Login onLoggedIn={this.handleLoggedIn} />
-        )}
-        {this.state.showScreen === "search" && (
-          <Search authToken={this.state.authToken} />
-        )}
-        {this.state.showScreen === "help" && <Help />}
+        <div className="bg">
+          {this.state.showScreen === "title" && <Title />}
+          {this.state.showScreen === "register" && <Register />}
+          {this.state.showScreen === "login" && (
+            <Login onLoggedIn={this.handleLoggedIn} />
+          )}
+          {this.state.showScreen === "search" && (
+            <Search authToken={this.state.authToken} />
+          )}
+          {this.state.showScreen === "help" && <Help />}
+        </div>
+        <NavigationBar_Bottom />
       </React.Fragment>
     );
   }
