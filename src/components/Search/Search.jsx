@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import SearchForm from "./SearchForm";
-import SearchPart from "./SearchPart";
 
 const searchNIM = `https://api.stya.net/nim/byid?query=`;
 const searchName = `https://api.stya.net/nim/byname?name=`;
@@ -33,8 +32,6 @@ class Search extends Component {
     if (data.code <= 0) {
       this.setState({ found: -1 });
     } else {
-      this.setState({ found: 1 });
-
       let temp = [];
       let resp = data.code;
       let i = 1;
@@ -61,12 +58,11 @@ class Search extends Component {
       }
 
       this.setState({ result: temp });
-      this.setState({ totalPage: resp === 0 ? i - 1 : i });
-    }
-  };
 
-  handleView = () => {
-    return <h3>Handle View...</h3>;
+      console.log(this.state.result);
+      this.setState({ totalPage: resp === 0 ? i - 1 : i });
+      this.setState({ found: 1 });
+    }
   };
 
   render() {
@@ -77,7 +73,26 @@ class Search extends Component {
         {this.state.found === -1 && <p>Nothing Found...</p>}
         {this.state.found === 1 && <p>Results...</p>}
         {this.state.found === 1 && (
-          /* Handling view of result state */ <p>Handler</p>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Nama</th>
+                <th scope="col">NIM TPB</th>
+                <th scope="col">NIM Jurusan</th>
+                <th scope="col">Prodi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.result.map(res => (
+                <tr>
+                  <td>{res[0]}</td>
+                  <td>{res[1]}</td>
+                  <td>{res[2]}</td>
+                  <td>{res[3]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         )}
       </React.Fragment>
     );

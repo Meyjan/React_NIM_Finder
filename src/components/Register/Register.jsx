@@ -41,7 +41,7 @@ class Register extends Component {
     console.log(data.code);
     console.log(data.status);
 
-    if (data.code == 0) {
+    if (data.code === 0) {
       this.setState({ registered: 1 });
     } else {
       this.setState({ registered: -1 });

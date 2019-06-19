@@ -37,12 +37,7 @@ class Login extends Component {
     });
     const data = await register_call.json();
 
-    console.log("Handle login received");
-    console.log(data.code);
-    console.log(data.status);
-    console.log(data.token);
-
-    if (data.code == 0) {
+    if (data.code === 0) {
       this.props.onLoggedIn(data.token);
     } else {
       this.setState({ loginFail: true });
