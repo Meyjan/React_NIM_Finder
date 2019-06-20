@@ -12,6 +12,8 @@
 
 #### Nama Aplikasi : React NIM Finder
 
+#### Link Aplikasi : https://meyjan.github.io/React_NIM_Finder
+
 ## Cara Instalasi
 
 ### Instalasi React
@@ -77,12 +79,12 @@
 
 Class-class javascript yang dibuat menggambarkan bagaimana aplikasi React ini akan digunakan. Pertama pada saat melakukan rendering aplikasi ini, index.js dibuka dan akan memanggil render pada App.js setelah menyiapkan domain dengan menggunakan React-DOM. Setelah memanggil App.js, terdapat beberapa class yang dipanggil oleh App.js, yaitu:
 
-- NavigationBar.js -> Hasil rendernya merupakan bagian dari hasil render App.js yang berfungsi untuk merender NavigationBar yang terdapat di atas. NavigationBar di atas juga berfungsi sebagai interface agar user dapat berpindah dari satu laman ke laman lain dengan melakukan click pada salah satu button ang aktif.
-- Title.js -> Merupakan basa-basi dari homepage. Title.js hanya berisi teks untuk judul dan wrappernya. Hasil render dari class ini dapat ditampilkan pada App.js bila perlu.
-- Help.js -> Merupakan basa-basi yang berisi penjelasan dari fitur-fitur yang terdapat dalam aplikasi ini. Hasil render dari class ini juga dapat ditampilkan pada App.js bila diperlukan.
-- Login.js -> Merupakan interface untuk melakukan login pada sebuah aplikasi. Class ini melakukan render laman login untuk ditampilkan pada App.js bila perlu. Class ini juga memanfaatkan hasil render dari LoginForm.js berupa form yang berisi data yang dibutuhkan untuk login.
-- Register.js -> Merupakan interface untuk melakukan register pada sebuah aplikasi. Class ini melakukan render laman register yang nantinya akan ditampilkan pada App.js. Class ini juga memanfaatkan hasil render dari RegisterForm.js berupa form berisi data yang akan didaftarkan dengan melakukan HTTP POST pada API yang disediakan.
-- Search.js -> Merupakan laman inti, yang juga dapat digunakan di App.js. Laman ini memanfaatkan SearchForm.js yang digunakan untuk mendapatkan query pencarian. Setelah mendapatkan query pencarian, Search.js menentukan apakah input tersebut semuanya berupa angka. Jika ya, maka dilakukan pencarian berdasarkan NIM. Jika tidak, maka dilakukan pencarian berdasarkan nama.
+- **NavigationBar.js** -> Hasil rendernya merupakan bagian dari hasil render App.js yang berfungsi untuk merender NavigationBar yang terdapat di atas. NavigationBar di atas juga berfungsi sebagai interface agar user dapat berpindah dari satu laman ke laman lain dengan melakukan click pada salah satu button ang aktif.
+- **Title.js** -> Merupakan basa-basi dari homepage. Title.js hanya berisi teks untuk judul dan wrappernya. Hasil render dari class ini dapat ditampilkan pada App.js bila perlu.
+- **Help.js** -> Merupakan basa-basi yang berisi penjelasan dari fitur-fitur yang terdapat dalam aplikasi ini. Hasil render dari class ini juga dapat ditampilkan pada App.js bila diperlukan.
+- **Login.js** -> Merupakan interface untuk melakukan login pada sebuah aplikasi. Class ini melakukan render laman login untuk ditampilkan pada App.js bila perlu. Class ini juga memanfaatkan hasil render dari LoginForm.js berupa form yang berisi data yang dibutuhkan untuk login.
+- **Register.js** -> Merupakan interface untuk melakukan register pada sebuah aplikasi. Class ini melakukan render laman register yang nantinya akan ditampilkan pada App.js. Class ini juga memanfaatkan hasil render dari RegisterForm.js berupa form berisi data yang akan didaftarkan dengan melakukan HTTP POST pada API yang disediakan.
+- **Search.js** -> Merupakan laman inti, yang juga dapat digunakan di App.js. Laman ini memanfaatkan SearchForm.js yang digunakan untuk mendapatkan query pencarian. Setelah mendapatkan query pencarian, Search.js menentukan apakah input tersebut semuanya berupa angka. Jika ya, maka dilakukan pencarian berdasarkan NIM. Jika tidak, maka dilakukan pencarian berdasarkan nama.
 
 #### Design Pattern Decorator
 
