@@ -102,9 +102,9 @@ Design Pattern Chain of Responsibility digunakan pada pembuatan aplikasi ini. Be
 
 #### Link dari library tersebut adalah:
 
-- ![react](https://www.npmjs.com/package/react)
-- ![react-dom](https://www.npmjs.com/package/react-dom)
-- ![bootstrap](https://www.npmjs.com/package/bootstrap)
+- [react](https://www.npmjs.com/package/react)
+- [react-dom](https://www.npmjs.com/package/react-dom)
+- [bootstrap](https://www.npmjs.com/package/bootstrap)
 
 ## Saran terhadap API
 
