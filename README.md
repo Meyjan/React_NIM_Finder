@@ -2,9 +2,7 @@
   README React NIM Finder
 </h1>
 
-<br/>
 ### Merupakan aplikasi pencari NIM mahasiswa yang memanfaatkan React untuk melakukan API Call ke _https://api.satya.net_
-<br/>
 
 ## Informasi Aplikasi
 
@@ -14,13 +12,10 @@
 
 ### Nama Aplikasi : React NIM Finder
 
-<br/>
-
 ## Cara Instalasi
 
 ### Instalasi React
 
-<br/>
 - Install npm dari internet (source: _https://www.npmjs.com/package/download_)
 - Install React dengan menggunakan npm, yaitu dengan mengetikkan _npm install react_
 - Gunakan command line untuk membuka folder di mana aplikasi ingin dibuat
@@ -41,7 +36,6 @@
 - Ketik _npm run build_ untuk membuat folder build hasil pembuatan aplikasi tersebut
 - Folder _build_ akan tersedia pada folder ini yang menandakan hasil build dari aplikasi ini
 
-<br/>
 ## Cara Menggunakan Aplikasi
 
 ### Tampilan Page pada Aplikasi
@@ -77,10 +71,12 @@
 - Laman _Search_ merupakan laman utama yang memungkinkan Anda untuk mencari detail mengenai nama dan NIM dari seseorang yang terdaftar dalam database dengan melakukan HTTP GET ke API yang disediakan. Jika sukses, maka akan ditampilkan tabel yang berisi informsai detail mengenai setiap mahasiswa yang memenuhi kriteria tersebut.
 - Fungsi _Logout_ merupakan fungsi, bukan laman, yang mengembalikan Anda ke laman utama dan menghapus token yang Anda dapat pada saat Anda melakukan login. Dengan demikian, _Search_ dan _Logout_ tidak dapat digunakan lagi sampai Anda melakukan _Login_.
 
-<br/>
 ## Desain Aplikasi
+
 ### Susunan class yang dibuat
+
 Class-class javascript yang dibuat menggambarkan bagaimana aplikasi React ini akan digunakan. Pertama pada saat melakukan rendering aplikasi ini, index.js dibuka dan akan memanggil render pada App.js setelah menyiapkan domain dengan menggunakan React-DOM. Setelah memanggil App.js, terdapat beberapa class yang dipanggil oleh App.js, yaitu:
+
 - NavigationBar.js -> Hasil rendernya merupakan bagian dari hasil render App.js yang berfungsi untuk merender NavigationBar yang terdapat di atas. NavigationBar di atas juga berfungsi sebagai interface agar user dapat berpindah dari satu laman ke laman lain dengan melakukan click pada salah satu button ang aktif.
 - Title.js -> Merupakan basa-basi dari homepage. Title.js hanya berisi teks untuk judul dan wrappernya. Hasil render dari class ini dapat ditampilkan pada App.js bila perlu.
 - Help.js -> Merupakan basa-basi yang berisi penjelasan dari fitur-fitur yang terdapat dalam aplikasi ini. Hasil render dari class ini juga dapat ditampilkan pada App.js bila diperlukan.
@@ -94,11 +90,12 @@ Design Pattern Decorator digunakan pada pembuatan aplikasi ini. Struktur yang di
 
 #### Design Pattern Chain of Responsibility
 
-Design Pattern Chain of Responsibility digunakan pada pembuatan aplikasi ini. Behavioral ini digunakan dengan memberikan "tanggung jawab" kepada class lain untuk merender bagian dari class yang memberikannya. Dalam hal ini, class App.js memberikan perintah kepada class-class "anaknya" untuk merender bagian yang diperlukan untuk dikembalikan sebagai suatu hasil render yang utuh.
+Design Pattern Chain of Responsibility digunakan pada pembuatan aplikasi ini. Behavioral ini digunakan dengan memberikan "tanggung jawab" kepada class lain untuk merender bagian dari class yang memberikannya. Dalam hal ini, class App.js memberikan perintah kepada class-class "anaknya" untuk merender bagian yang diperlukan untuk dikembalikan sebagai suatu hasil render yang utuh.<br/>
 
-<br/>
 ## Library
+
 #### Terdapat 3 buah library yang digunakan untuk melakukan projek ini, yaitu
+
 - React: Merupakan library dasar yang memang dibutuhkan untuk membuat aplikasi React
 - React-DOM: Merupakan library yang dibutuhkan untuk membuat sebuah domain yang memanfaatkan aplikasi React.
 - Bootstrap: Merupakan library yang dibutuhkan untuk melakukan styling pada page yang digunakan (selain menggunakan css).
@@ -109,8 +106,9 @@ Design Pattern Chain of Responsibility digunakan pada pembuatan aplikasi ini. Be
 - ![react-dom](https://www.npmjs.com/package/react-dom)
 - ![bootstrap](https://www.npmjs.com/package/bootstrap)
 
-<br/>
 ## Saran terhadap API
+
 API yang dibuat sudah bagus. Untuk pemula seperti saya, API yang diberikan mudah untuk dipahami dan mampu dijadikan sebagai bahan untuk mempelajari API call, namun masih terdapat masalah yang dimiliki oleh API tersebut, yaitu sebagai berikut:
+
 - API memberikan token yang mudah di-copy pada saat login sehingga user lain mampu berbagi token tersebut. Token tersebut memiliki waktu expire 1 hari dan itu merupakan waktu yang lama bagi attacker untuk memanfaatkan cookie untuk menyerang API tersebut.
 - API tidak memberikan jumlah tuple yang memenuhi pencarian query. Dengan demikian, tidak dapat ditentukan jumlah page yang dibutuhkan untuk sebuah query sebelum melakukan searching secara keseluruhan.
