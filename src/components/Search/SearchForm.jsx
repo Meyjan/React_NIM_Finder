@@ -1,5 +1,8 @@
 import React from "react";
 
+/**
+ * Merupakan class yang menghandle form untuk pencarian NIM
+ */
 const SearchForm = props => (
   <form onSubmit={props.onSearch}>
     <div className="input-group mb-3">

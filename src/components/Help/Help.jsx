@@ -1,6 +1,9 @@
 import React from "react";
 import "./Help.css";
 
+/**
+ * Merupakan laman Help yang memberikan basa-basi mengenai fitur yang terdapat dalam program ini
+ */
 const Help = () => {
   return (
     <div className="help-wrapper">

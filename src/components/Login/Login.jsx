@@ -4,12 +4,20 @@ import "./Login.css";
 
 const registerURL = `https://api.stya.net/nim/login`;
 
+/**
+ * Merupakan laman yang menangani proses login
+ */
 class Login extends Component {
   state = {
     loginFail: false,
     status: undefined
   };
 
+  /**
+   * Melakukan HTTP POST ke API yang disediakan untuk menentukan
+   * apakah nama dan password tersebut sudah terdaftar dan user
+   * layak login. Jika ya, berikan user token, jika tidak, berikan pesan error
+   */
   handleLogin = async e => {
     e.preventDefault();
 

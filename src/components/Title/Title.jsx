@@ -1,6 +1,9 @@
 import React from "react";
 import "./Title.css";
 
+/**
+ * Merupakan class yang menampilkan tampilan halaman utama
+ */
 const Title = () => {
   return (
     <div className="wrapper">

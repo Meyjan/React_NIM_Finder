@@ -1,5 +1,8 @@
 import React from "react";
 
+/**
+ * Merupakan laman form login
+ */
 const LoginForm = props => (
   <form onSubmit={props.onLogin}>
     <div className="input-group mb-3">

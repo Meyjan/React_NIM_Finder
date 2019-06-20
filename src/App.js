@@ -11,6 +11,9 @@ import Search from "./components/Search/Search";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import NavigationBarBottom from "./components/NavigationBar_Bottom/NavigationBarBottom";
 
+/**
+ * Class utama yang menampilkan hasil render dari semua komponen di bawahnya
+ */
 class App extends Component {
   state = {
     showScreen: "title",
@@ -18,32 +21,53 @@ class App extends Component {
     authToken: ""
   };
 
+  /**
+   * Mengubah layar yang ditampilkan menjadi title
+   */
   handlegotoTitle = () => {
     this.setState({ showScreen: "title" });
   };
 
+  /**
+   * Mengubah layar yang ditampilkan menjadi login
+   */
   handlegotoLogin = () => {
     this.setState({ showScreen: "login" });
   };
 
+  /**
+   * Mengubah layar yang ditampilkan menjadi register
+   */
   handlegotoRegister = () => {
     this.setState({ showScreen: "register" });
   };
 
+  /**
+   * Mengubah layar yang ditampilkan menjadi search
+   */
   handlegotoSearch = () => {
     this.setState({ showScreen: "search" });
   };
 
+  /**
+   * Mengubah layar yang ditampilkan menjadi help
+   */
   handlegotoHelp = () => {
     this.setState({ showScreen: "help" });
   };
 
+  /**
+   * Handle jika sudah login. Mengganti laman menjadi search dan set token menjadi authorityToken yang didapatkan
+   */
   handleLoggedIn = token => {
     this.setState({ showScreen: "search" });
     this.setState({ loggedIn: true });
     this.setState({ authToken: token });
   };
 
+  /**
+   * Handle jika sudah logout. Mengganti laman menjadi title dan set token menjadi unknown (sudah loggedOut)
+   */
   handleLoggedOut = () => {
     this.setState({ showScreen: "title" });
     this.setState({ loggedIn: false });

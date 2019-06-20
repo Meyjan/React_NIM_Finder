@@ -4,12 +4,19 @@ import "./Register.css";
 
 const registerURL = `https://api.stya.net/nim/register`;
 
+/**
+ * Merupakan laman yang menangani proses register
+ */
 class Register extends Component {
   state = {
     registered: 0,
     status: undefined
   };
 
+  /** Method yang menangani proses register dengan melakukan HTTP POST ke
+   * API yang disediakan serta memberikan pesan apakah username dan password
+   * yang diberikan oleh user diterima oleh API tersebut.
+   */
   handleRegister = async e => {
     e.preventDefault();
 

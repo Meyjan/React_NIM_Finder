@@ -1,5 +1,8 @@
 import React from "react";
 
+/**
+ * Merupakan class untuk menghandle form untuk register
+ */
 const RegisterForm = props => (
   <form onSubmit={props.onRegister}>
     <div className="input-group mb-3">

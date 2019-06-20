@@ -6,6 +6,9 @@ const searchNIM = `https://api.stya.net/nim/byid?query=`;
 const searchName = `https://api.stya.net/nim/byname?name=`;
 const numRegex = new RegExp(/^\d+$/);
 
+/**
+ * Merupakan class yang menangani pencarian detail dari nama atau NIM
+ */
 class Search extends Component {
   state = {
     found: 0,
@@ -13,6 +16,11 @@ class Search extends Component {
     totalPage: 0
   };
 
+  /**
+   * Merupakan method yang menangani searching berdasarkan nama atau NIM
+   * Jika query berisi angka semua, pencarian berdasarkan NIM. Jika tidak, berdasarkan nama.
+   * Setelah itu, lakukan HTTP GET pada API dengan header token lalu menampilkan tabel hasil HTTP request
+   */
   handleSearch = async e => {
     e.preventDefault();
 

@@ -1,5 +1,8 @@
 import React from "react";
 
+/**
+ * Merupakan laman NavigationBar yang merupakan interface untuk perpindahan antar laman
+ */
 const NavigationBar = props => {
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
