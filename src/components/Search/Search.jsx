@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SearchForm from "./SearchForm";
+import "./Search.css";
 
 const searchNIM = `https://api.stya.net/nim/byid?query=`;
 const searchName = `https://api.stya.net/nim/byname?name=`;
@@ -67,34 +68,49 @@ class Search extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h1>Search for NIM or Name</h1>
-        <SearchForm onSearch={this.handleSearch} />
-        {this.state.found === -1 && <p>Nothing Found...</p>}
-        {this.state.found === 1 && <p>Results...</p>}
-        {this.state.found === 1 && (
-          <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Nama</th>
-                <th scope="col">NIM TPB</th>
-                <th scope="col">NIM Jurusan</th>
-                <th scope="col">Prodi</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.result.map(res => (
-                <tr>
-                  <td>{res[0]}</td>
-                  <td>{res[1]}</td>
-                  <td>{res[2]}</td>
-                  <td>{res[3]}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </React.Fragment>
+      <div className="search-wrapper">
+        <div className="column">
+          <h5>
+            <br />
+          </h5>
+          <h2>Enter NIM or Name</h2>
+          <SearchForm onSearch={this.handleSearch} />
+          {this.state.found === -1 && <p>Nothing Found...</p>}
+          {this.state.found === 1 && <p>Results...</p>}
+          {this.state.found === 1 && (
+            <div class="overflow-auto">
+              <table className="table table-striped table-bordered table-sm">
+                <thead className="thead-dark">
+                  <tr>
+                    <th className="th-sm" scope="col">
+                      Nama
+                    </th>
+                    <th className="th-sm" scope="col">
+                      NIM TPB
+                    </th>
+                    <th className="th-sm" scope="col">
+                      NIM Jurusan
+                    </th>
+                    <th className="th-sm" scope="col">
+                      Prodi
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.result.map(res => (
+                    <tr key={res[2]}>
+                      <td>{res[0]}</td>
+                      <td>{res[1]}</td>
+                      <td>{res[2]}</td>
+                      <td>{res[3]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      </div>
     );
   }
 }
