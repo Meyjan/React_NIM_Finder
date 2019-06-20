@@ -73,12 +73,14 @@ class Search extends Component {
           <h5>
             <br />
           </h5>
-          <h2>Enter NIM or Name</h2>
-          <SearchForm onSearch={this.handleSearch} />
-          {this.state.found === -1 && <p>Nothing Found...</p>}
-          {this.state.found === 1 && <p>Results...</p>}
+          <div className="search-text-wrapper">
+            <h2>Enter NIM or Name</h2>
+            <SearchForm onSearch={this.handleSearch} />
+            {this.state.found === -1 && <h4>Nothing Found...</h4>}
+            {this.state.found === 1 && <h4>Results...</h4>}
+          </div>
           {this.state.found === 1 && (
-            <div class="overflow-auto">
+            <div className="overflow-auto">
               <table className="table table-striped table-bordered table-sm">
                 <thead className="thead-dark">
                   <tr>
