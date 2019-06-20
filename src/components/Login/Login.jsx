@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import LoginForm from "./LoginForm";
+import "./Login.css";
 
 const registerURL = `https://api.stya.net/nim/login`;
 
@@ -47,13 +48,26 @@ class Login extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h1>Log into your account Here!</h1>
-        <h3>Enter your username and password!</h3>
-        <LoginForm onLogin={this.handleLogin} />
-        {this.state.loginFail && <p>Login Failed...</p>}
-        {this.state.loginFail && <p>{this.state.status}</p>}
-      </React.Fragment>
+      <div className="row">
+        <div className="login-title-wrapper">
+          <div className="login-title-text-wrapper">
+            <h1>
+              <font color="white">Log into your account Here!</font>
+            </h1>
+            <h3>
+              <font color="white">Enter your username and password!</font>
+            </h3>
+          </div>
+        </div>
+        <div className="login-form-wrapper">
+          <div className="login-form-text-wrapper">
+            <LoginForm onLogin={this.handleLogin} />
+            {this.state.loginFail && <p>---------------</p>}
+            {this.state.loginFail && <p>Login Failed...</p>}
+            {this.state.loginFail && <p>{this.state.status}</p>}
+          </div>
+        </div>
+      </div>
     );
   }
 }

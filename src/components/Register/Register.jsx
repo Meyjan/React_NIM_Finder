@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RegisterForm from "./RegisterForm";
+import "./Register.css";
 
 const registerURL = `https://api.stya.net/nim/register`;
 
@@ -51,14 +52,31 @@ class Register extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h1>Register Here!</h1>
-        <h3>Enter your username and password!</h3>
-        <RegisterForm onRegister={this.handleRegister} />
-        {this.state.registered === 1 && <p>Registration Success!</p>}
-        {this.state.registered === -1 && <p>Registration Failed...</p>}
-        {this.state.registered === -1 && <p>{this.state.status}</p>}
-      </React.Fragment>
+      <div className="row">
+        <div className="register-title-wrapper">
+          <div className="register-title-text-wrapper">
+            <h1>
+              <font color="white">Register your new account Here!</font>
+            </h1>
+            <h3>
+              <font color="white">
+                Enter your desired username and password!
+              </font>
+            </h3>
+          </div>
+        </div>
+        <div className="register-form-wrapper">
+          <div className="register-form-text-wrapper">
+            <RegisterForm onRegister={this.handleRegister} />
+            {(this.state.registered === 1 || this.state.registered === -1) && (
+              <p>---------------------</p>
+            )}
+            {this.state.registered === 1 && <p>Registration Success!</p>}
+            {this.state.registered === -1 && <p>Registration Failed...</p>}
+            {this.state.registered === -1 && <p>{this.state.status}</p>}
+          </div>
+        </div>
+      </div>
     );
   }
 }

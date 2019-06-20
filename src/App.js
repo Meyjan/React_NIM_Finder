@@ -9,7 +9,7 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import Search from "./components/Search/Search";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
-import NavigationBar_Bottom from "./components/NavigationBar_Bottom/NavigationBar_Bottom";
+import NavigationBarBottom from "./components/NavigationBar_Bottom/NavigationBarBottom";
 
 class App extends Component {
   state = {
@@ -74,7 +74,7 @@ class App extends Component {
           )}
           {this.state.showScreen === "help" && <Help />}
         </div>
-        <NavigationBar_Bottom />
+        <NavigationBarBottom />
       </React.Fragment>
     );
   }
