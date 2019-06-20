@@ -2,15 +2,15 @@
   README React NIM Finder
 </h1>
 
-### Merupakan aplikasi pencari NIM mahasiswa yang memanfaatkan React untuk melakukan API Call ke _https://api.satya.net_
+##### Merupakan aplikasi pencari NIM mahasiswa yang memanfaatkan React untuk melakukan API Call ke _https://api.satya.net_
 
 ## Informasi Aplikasi
 
-### NIM : 13517131
+#### NIM : 13517131
 
-### Nama Pembuat : Jan Meyer Saragih
+#### Nama Pembuat : Jan Meyer Saragih
 
-### Nama Aplikasi : React NIM Finder
+#### Nama Aplikasi : React NIM Finder
 
 ## Cara Instalasi
 
