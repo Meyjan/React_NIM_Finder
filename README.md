@@ -1,68 +1,110 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align = "center">
+  README React NIM Finder
+</h1>
 
-## Available Scripts
+<br>
+### Merupakan aplikasi pencari NIM mahasiswa yang memanfaatkan React untuk melakukan API Call ke _https://api.satya.net_
+<br>
 
-In the project directory, you can run:
+## Informasi Aplikasi
 
-### `npm start`
+### NIM : 13517131
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Nama Pembuat : Jan Meyer Saragih
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Nama Aplikasi : React NIM Finder
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Cara Instalasi
 
-### `npm run build`
+### Instalasi React
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
+- Install npm dari internet (source: _https://www.npmjs.com/package/download_)
+- Install React dengan menggunakan npm, yaitu dengan mengetikkan _npm install react_
+- Gunakan command line untuk membuka folder di mana aplikasi ingin dibuat
+- Install semua package yang pernah diinstall dengan menggunakan _npm run install_
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Setelah melakukan instalasi React, maka Anda dapat melakukan:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Menjalankan aplikasi dalam komputer sendiri dengan menggunakan _npm start_
+2. Melakukan build aplikasi ini dan membukanya pada website
 
-### `npm run eject`
+#### Untuk opsi <1>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Ketik _npm start_ pada cmd
+- Buka _localhost:3000_ pada browser untuk mengakses hasil dari _npm start_
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Untuk opsi <2>
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Ketik _npm run build_ untuk membuat folder build hasil pembuatan aplikasi tersebut
+- Folder _build_ akan tersedia pada folder ini yang menandakan hasil build dari aplikasi ini
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<br>
+## Cara Menggunakan Aplikasi
 
-## Learn More
+### Tampilan Page pada Aplikasi
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##### Home Page
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Home Page](screenshots/ss_main.png)<br/>
 
-### Code Splitting
+##### Help Page
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+![Help Page](screenshots/ss_help.png)<br/>
 
-### Analyzing the Bundle Size
+##### Login Page
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+![Login Page](screenshots/ss_login.png)<br/>
 
-### Making a Progressive Web App
+##### Register Page
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+![Register Page](screenshots/ss_register.png)<br/>
 
-### Advanced Configuration
+##### Search Page
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+![Search Page](screenshots/ss_search.png)<br/>
 
-### Deployment
+### Langkah penggunaan aplikasi
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- Pada saat Anda pertama kali membuka aplikasi ini, Anda akan membuka _Home Page_ yang hanya berisi title beserta navigation bar sebagai header dan footernya.
+- Pada navigation bar di atas, terdapat laman yang bisa diakses, yaitu _Help_, _Login_, dan _Register_.
+- Laman _Help_ berisi penjelasan mengenai fitur yang terdapat dalam aplikasi ini. Namun, sebagian dari isinya hanya bercanda.
+- Laman _Register_ memungkinkan pengguna untuk melakukan registrasi. Dengan memasukkan username dan password yang dibutuhkan untuk user tersebut, aplikasi akan melakukan HTTP POST ke API yang disediakan. Jika sukses, maka akan dikembalikan kode 0 dan username beserta password tersebut telah terdaftar dalam API tersebut untuk 1 hari.
+- Laman _Login_ digunakan agar Anda dapat memperoleh akses untuk melakukan searching NIM pada aplikasi ini. Setelah melakukan register, maka Anda dapat memasukkan username dan password yang telah di-register dan memperoleh akses dalam aplikasi ini.
+- Setelah Anda login, maka terdapat 2 fungsi lagi yang dapat dimanfaatkan yaitu _Search_ dan _Logout_
+- Laman _Search_ merupakan laman utama yang memungkinkan Anda untuk mencari detail mengenai nama dan NIM dari seseorang yang terdaftar dalam database dengan melakukan HTTP GET ke API yang disediakan. Jika sukses, maka akan ditampilkan tabel yang berisi informsai detail mengenai setiap mahasiswa yang memenuhi kriteria tersebut.
+- Fungsi _Logout_ merupakan fungsi, bukan laman, yang mengembalikan Anda ke laman utama dan menghapus token yang Anda dapat pada saat Anda melakukan login. Dengan demikian, _Search_ dan _Logout_ tidak dapat digunakan lagi sampai Anda melakukan _Login_.
 
-### `npm run build` fails to minify
+<br>
+## Desain Aplikasi
+### Susunan class yang dibuat
+Class-class javascript yang dibuat menggambarkan bagaimana aplikasi React ini akan digunakan. Pertama pada saat melakukan rendering aplikasi ini, index.js dibuka dan akan memanggil render pada App.js setelah menyiapkan domain dengan menggunakan React-DOM. Setelah memanggil App.js, terdapat beberapa class yang dipanggil oleh App.js, yaitu:
+- NavigationBar.js -> Hasil rendernya merupakan bagian dari hasil render App.js yang berfungsi untuk merender NavigationBar yang terdapat di atas. NavigationBar di atas juga berfungsi sebagai interface agar user dapat berpindah dari satu laman ke laman lain dengan melakukan click pada salah satu button ang aktif.
+- Title.js -> Merupakan basa-basi dari homepage. Title.js hanya berisi teks untuk judul dan wrappernya. Hasil render dari class ini dapat ditampilkan pada App.js bila perlu.
+- Help.js -> Merupakan basa-basi yang berisi penjelasan dari fitur-fitur yang terdapat dalam aplikasi ini. Hasil render dari class ini juga dapat ditampilkan pada App.js bila diperlukan.
+- Login.js -> Merupakan interface untuk melakukan login pada sebuah aplikasi. Class ini melakukan render laman login untuk ditampilkan pada App.js bila perlu. Class ini juga memanfaatkan hasil render dari LoginForm.js berupa form yang berisi data yang dibutuhkan untuk login.
+- Register.js -> Merupakan interface untuk melakukan register pada sebuah aplikasi. Class ini melakukan render laman register yang nantinya akan ditampilkan pada App.js. Class ini juga memanfaatkan hasil render dari RegisterForm.js berupa form berisi data yang akan didaftarkan dengan melakukan HTTP POST pada API yang disediakan.
+- Search.js -> Merupakan laman inti, yang juga dapat digunakan di App.js. Laman ini memanfaatkan SearchForm.js yang digunakan untuk mendapatkan query pencarian. Setelah mendapatkan query pencarian, Search.js menentukan apakah input tersebut semuanya berupa angka. Jika ya, maka dilakukan pencarian berdasarkan NIM. Jika tidak, maka dilakukan pencarian berdasarkan nama.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#### Design Pattern Decorator
+
+Design Pattern Decorator digunakan pada pembuatan aplikasi ini. Struktur yang dibuat merupakan struktur decorator. Struktur pada design pattern ini digunakan, yaitu dengan menggunakan App.js sebagai parent dan class-class lainnya merupakan "anak" dari class App.js. Hal ini disebabkan hanya class App.js yang dirender oleh komputer. Sementara itu, class yang lainnya dirender dan hasilnya diberikan kepada App.js untuk dijadikan sebuah hasil render yang utuh.
+
+#### Design Pattern Chain of Responsibility
+
+Design Pattern Chain of Responsibility digunakan pada pembuatan aplikasi ini. Behavioral ini digunakan dengan memberikan "tanggung jawab" kepada class lain untuk merender bagian dari class yang memberikannya. Dalam hal ini, class App.js memberikan perintah kepada class-class "anaknya" untuk merender bagian yang diperlukan untuk dikembalikan sebagai suatu hasil render yang utuh.
+
+<br>
+## Library
+#### Terdapat 3 buah library yang digunakan untuk melakukan projek ini, yaitu
+- React: Merupakan library dasar yang memang dibutuhkan untuk membuat aplikasi React
+- React-DOM: Merupakan library yang dibutuhkan untuk membuat sebuah domain yang memanfaatkan aplikasi React.
+- Bootstrap: Merupakan library yang dibutuhkan untuk melakukan styling pada page yang digunakan (selain menggunakan css).
+
+<br>
+## Saran terhadap API
+API yang dibuat sudah bagus, namun masih terdapat masalah yang dimiliki oleh API tersebut, yaitu sebagai berikut:
+- API memberikan token yang mudah di-copy pada saat login sehingga user lain mampu berbagi token tersebut. Token tersebut memiliki waktu expire 1 hari dan itu merupakan waktu yang lama bagi attacker untuk memanfaatkan cookie untuk menyerang API tersebut.
+- API tidak memberikan jumlah tuple yang memenuhi pencarian query. Dengan demikian, tidak dapat ditentukan jumlah page yang dibutuhkan untuk sebuah query sebelum melakukan searching secara keseluruhan.
